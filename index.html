@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Extrema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header,
+        section,
+        footer {
+            padding: 20px;
+            margin: 10px;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        section {
+            border: 1px solid #ddd;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 500px;
+            /* Definindo um tamanho fixo para todas as imagens */
+            object-fit: cover;
+            /* Garante que as imagens preencham o espaço sem distorção */
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #mapa iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        a:hover{
+            text-decoration: underline  rgb(30, 106, 9) ;
+        }
+        footer {
+            background-color: rgb(83, 204, 49);
+            color: black;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Explore Extrema</h1>
+        <p>Descubra as belezas naturais e atrações culturais de Extrema, Minas Gerais.</p>
+    </header>
+
+    <nav>
+        <a href="#atracoes">Atrações</a>
+        <a href="#gastronomia">Gastronomia</a>
+        <a href="#rotas">Rotas</a>
+    </nav>
+
+    <div class="container">
+        <section id="atracoes">
+            <h2>Atrações Principais</h2>
+            <div class="carousel" id="carousel-atracoes">
+                <img src="imagens/pedra-cume.jpg" alt="Atração 1" class="active">
+                <img src="imagens/pico-guara.jpg" alt="Atração 2">
+                <img src="imagens/rota-das-pedras.jpg" alt="Atração 3">
+                <div class="controls">
+                    <button onclick="prevSlide('carousel-atracoes')">&#10094;</button>
+                    <button onclick="nextSlide('carousel-atracoes')">&#10095;</button>
+                </div>
+            </div>
+            <p>Conheça os pontos turísticos mais visitados da região, como a Pedra do Cume e o Parque Municipal
+                Cachoeira do Salto.</p>
+        </section>
+
+        <section id="gastronomia">
+            <h2>Gastronomia</h2>
+            <div class="carousel" id="carousel-gastronomia">
+                <img src="imagens/armazem_bertolotti.jpg" alt="Gastronomia de Extrema" class="active">
+                <img src="imagens/vila_lobos.jpg" alt="Gastronomia de Extrema">
+                <img src="imagens/villa_ramos.jpg" alt="Gastronomia de Extrema">
+                <img src="imagens/pamonharia_joaquina.jpg" alt="Gastronomia de Extrema">
+                <img src="imagens/empyereo_destilatario.jpg" alt="Gastronomia de Extrema">
+                <div class="controls">
+                    <button onclick="prevSlide('carousel-gastronomia')">&#10094;</button>
+                    <button onclick="nextSlide('carousel-gastronomia')">&#10095;</button>
+                </div>
+            </div>
+            <p>Delicie-se com a culinária local, incluindo os famosos queijos mineiros e pratos típicos.</p>
+        </section>
+
+        <section id="rotas">
+            <h2>Rota</h2>
+            <div class="carousel" id="carousel-rotas">
+                <img src="imagens/rota-das-rosas.jpg" alt="Rota das Rosas" class="active">
+                <img src="imagens/rota-do-sol.webp" alt="Rota do Sol">
+                <img src="imagens/rota-dos-ventos.jpg" alt="Rota dos Ventos">
+                <img src="imagens/rotas-das-aguas.jpg" alt="Rota das Águas">
+                <div class="controls">
+                    <button onclick="prevSlide('carousel-rotas')">&#10094;</button>
+                    <button onclick="nextSlide('carousel-rotas')">&#10095;</button>
+                </div>
+            </div>
+            <p>Rota de Extrema</p>
+            <p>Explore as rotas temáticas que Extrema oferece e conheça: Rota das Rosas,Rota do Sol,Rota dos Ventos e Rota das Águas.<br>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Explore Extrema. Todos os direitos reservados.</p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+        <section id="mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29413.91138269717!2d-46.3647044256836!3d-22.8491467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ceadb45f10e2ab%3A0x186be6e2a34f1852!2sParque%20de%20Eventos%20de%20Extrema-MG!5e0!3m2!1spt-BR!2sbr!4v1732848352502!5m2!1spt-BR!2sbr"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </footer>
+
+    <script>
+        function showSlide(carouselId, index) {
+            const slides = document.querySelectorAll(`#${carouselId} img`);
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        function prevSlide(carouselId) {
+            const slides = document.querySelectorAll(`#${carouselId} img`);
+            let currentSlide = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+            currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+            showSlide(carouselId, currentSlide);
+        }
+
+        function nextSlide(carouselId) {
+            const slides = document.querySelectorAll(`#${carouselId} img`);
+            let currentSlide = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+            currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+            showSlide(carouselId, currentSlide);
+        }
+
+        setInterval(() => nextSlide('carousel-atracoes'), 3000); // Mudar imagem automaticamente a cada 3 segundos
+        setInterval(() => nextSlide('carousel-gastronomia'), 3000); // Mudar imagem automaticamente a cada 3 segundos
+
+    </script>
+</body>
+</html>
